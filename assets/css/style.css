@@ -75,5 +75,15 @@ a {
 main {
     display: grid;
     grid-template-columns: repeat(auto-fit, 400px); /*https://css-tricks.com/auto-sizing-columns-css-grid-auto-fill-vs-auto-fit/*/
+    grid-row-gap: 25px;
+    margin-top: 40px;
     justify-content: center;
+}
+
+@media screen and (max-width: 799px) {
+    header h1 {
+        left: 0;
+        width: 100%;
+        text-align: center;
+    }
 }
