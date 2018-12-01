@@ -1,0 +1,79 @@
+html {
+    width: 100vw;
+    overflow-x: hidden;
+}
+
+#landingImageContainer {
+    position: relative;
+    height: 100vh; /*needed to stop latter elements from overlapping*/
+}
+
+#landingImage, #alternateLandingImage {
+    position: absolute;
+    content:url('../images/architectural-design-architecture-buildings-692103-ConvertImage.jpg');   /*https://stackoverflow.com/questions/2182716/is-it-possible-to-set-the-equivalent-of-a-src-attribute-of-an-img-tag-in-css*/
+    object-fit: cover;  /*https://medium.com/@chrisnager/center-and-crop-images-with-a-single-line-of-css-ad140d5b4a87*/
+    height: 100vh;
+    width: 100vw;
+    z-index: -1;
+}
+
+
+#alternateLandingImage {
+    content:url('../images/architectural-design-architecture-buildings-692103.jpg');   /*https://stackoverflow.com/questions/2182716/is-it-possible-to-set-the-equivalent-of-a-src-attribute-of-an-img-tag-in-css*/
+}
+
+header {
+    display: flex;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    position: fixed;
+    top: 5%;
+    font-size: 24px;
+    width: 90vw;
+    justify-content: center;
+    left: 5%;
+}
+
+#scrolled {
+    background-color:#A4BDD4;
+    height: 28px;
+    border-radius: 25px;
+    color: #333;
+    font-size: 24px;
+}
+
+#scrolled:hover {
+    background-color: #aaa;
+    color: #014888;
+}
+
+header h1, header h2{
+    top: inherit;
+}
+
+header h1 {
+    position: absolute;
+    left: inherit;
+}
+
+header div {
+    position: absolute;
+    top: inherit;
+    right: 5%;
+    margin: 0;
+}
+h2 {
+    display: inline;
+    margin: 0 0 0 15px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+main {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 400px); /*https://css-tricks.com/auto-sizing-columns-css-grid-auto-fill-vs-auto-fit/*/
+    justify-content: center;
+}
