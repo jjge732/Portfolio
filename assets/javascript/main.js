@@ -1,9 +1,9 @@
-$('#landingImageContainer header').hover(function() {
+$('#landingImageContainer').hover(function() {
     $('#landingImageContainer img').remove();
-    $('#landingImageContainer').append($('<img alt="color" id="alternateLandingImage">'));
+    $('#landingImageContainer').append($('<img alt="color" id="landingImage">'));
 }, function() {
     $('#landingImageContainer img').remove();
-    $('#landingImageContainer').append($('<img alt="black & white" id="landingImage">'));
+    $('#landingImageContainer').append($('<img alt="black & white" id="alternateLandingImage">'));
 });
 
 

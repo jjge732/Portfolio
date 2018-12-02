@@ -8,11 +8,13 @@
     <link rel='stylesheet' href='assets/css/reset.css'>
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <link rel='stylesheet' href='assets/css/style.css'>
+    <!-- https://www.htmlgoodies.com/tutorials/web_graphics/article.php/3480001/So-You-Want-To-Pre-Load-Huh.htm -->
+    <link rel='preload' as='image' href='assets/images/architectural-design-architecture-buildings-692103-ConvertImage.jpg'>
     <script src='assets/javascript/jQuery.js'></script>
 </head>
 <body>
     <div id='landingImageContainer'>
-        <img id='landingImage' alt ='topBackgroundImage'src='assets/images/architectural-design-architecture-buildings-692103.jpg'> <!--only used if content:url() is not supported-->
+        <img id='landingImage' alt ='topBackgroundImage'src='assets/images/architectural-design-architecture-buildings-692103.jpg'>
         <header>
             <h1>
                 John Eastwood
@@ -24,15 +26,18 @@
             </h2>
         </header>
     </div>
-
     <h3>
         Brand Statement
     </h3>
 
-    <p>
-        Web Developer with a background in biochemistry and a passion for interactive, user-friendly web design. Superb at collaborating ideas with colleagues so everyone’s opinion is heard while ensuring projects are completed on time. Inventive problem-solver and tireless worker at any task.This is most easily through Chi X. Chi X is a web application that uses several APIs to bring together many different ideas to make one useful and cohesive project. I have experience with JavaScript, CSS, and HTML through study at Northwestern’s Coding Bootcamp as well as independent practice. Strengths include general coding logic, CSS styling, and adaptability to any new task. Currently learning Node.js and better ways to write code. Always enthusiastic to learn new ways of accomplishing objectives. My coding and interpersonal skills will undoubtedly help any team design and output amazing products in a timely manner.  
-    </p>
-
+    <div id='paragraphContainer'>
+        <p id='col-1'>
+            Web Developer with a background in biochemistry and a passion for interactive, user-friendly web design. Superb at collaborating ideas with colleagues so everyone’s opinion is heard while ensuring projects are completed on time. Inventive problem-solver and tireless worker at any task.This is most easily through Chi X. Chi X is a web application that uses several APIs to bring together many different ideas to make one useful and cohesive project.
+        </p>
+        <p id='col-2'>
+            I have experience with JavaScript, CSS, and HTML through study at Northwestern’s Coding Bootcamp as well as independent practice. Strengths include general coding logic, CSS styling, and adaptability to any new task. Currently learning Node.js and better ways to write code. Always enthusiastic to learn new ways of accomplishing objectives. My coding and interpersonal skills will undoubtedly help any team design and output amazing products in a timely manner.
+        </p>
+    </div>
     <h3>
         Projects
     </h3>
