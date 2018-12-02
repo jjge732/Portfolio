@@ -9,10 +9,17 @@ $('#landingImageContainer').hover(function() {
 
 
 $(document).scroll('header', function() {
-        $('header').attr('id', 'scrolled')
+    $('header').attr('style', `background-color: rgba(164, 189, 212, ${$(window).scrollTop() / 3}%);`);
+    $('h1, h2').attr('style', `color: rgb(${360 - $(window).scrollTop() * 3}, ${360 - $(window).scrollTop() * 3}, ${360 - $(window).scrollTop() * 3});`)
     if ($(window).scrollTop() === 0) {
         $('header').attr('id', '');
-    }
+    } else if ($(window).scrollTop() > 300) {
+        $('header').attr('style', 'background-color:rgba(164, 189, 212, 100%);');
+        $('h1, h2').attr('style', 'color: rgb(51, 51, 51);');
+    };
+    if ($(window).scrollTop() > 0) {
+        $('header').attr('id', 'scrolled')
+    };
 });
 
 setInterval(function() {

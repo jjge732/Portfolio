@@ -3,7 +3,6 @@ html {
     overflow-x: hidden;
     background-color: #ddd;
     font-family: 'Montserrat', sans-serif;
-
 }
 
 #landingImageContainer {
@@ -32,7 +31,6 @@ main img {
 
 header {
     display: grid;
-    color: white;
     position: fixed;
     top: 5%;
     font-size: 24px;
@@ -65,10 +63,9 @@ h3 {
 }
 
 #scrolled {
-    background-color:#A4BDD4;
     border-radius: 25px;
-    color: #333;
     font-size: 24px;
+    box-shadow: 2px 2px 4px;
 }
 
 /* #scrolled:hover {
