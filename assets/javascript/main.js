@@ -35,3 +35,15 @@ setInterval(function() {
         $('header h2 a').text("Porfolio")
     };
 }, 1);
+
+$('#clickableImg1').hover(function() {
+    $(this).attr('src', 'assets/images/screenshots/chi-X-screenshot.jpg')
+}, function() {
+    $(this).attr('src', 'assets/images/screenshots/chi-X-screenshot-ConvertImage.jpg')
+});
+
+$('#clickableImg2').hover(function() {
+    $(this).attr('src', 'assets/images/screenshots/trivia-screenshot.jpg')
+}, function() {
+    $(this).attr('src', 'assets/images/screenshots/trivia-screenshot-ConvertImage.jpg')
+});
