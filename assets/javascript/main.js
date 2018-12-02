@@ -13,10 +13,16 @@ $(document).scroll('header', function() {
     $('h1, h2').attr('style', `color: rgb(${360 - $(window).scrollTop() * 3}, ${360 - $(window).scrollTop() * 3}, ${360 - $(window).scrollTop() * 3});`)
     if ($(window).scrollTop() === 0) {
         $('header').attr('id', '');
+        $('#toTop').remove();
     } else if ($(window).scrollTop() > 300) {
-        $('header').attr('style', 'background-color:rgba(164, 189, 212, 100%);');
+        $('header').attr('style', 'background-color: rgb(164, 189, 212);');
         $('h1, h2').attr('style', 'color: rgb(51, 51, 51);');
-    };
+    }
+    if  ($(window).scrollTop() > 500 && $('#toTop').text() === '') {
+        $('header').append($('<span id="toTop"><a href="#landingImageContainer">Back to top</a></span>'))
+    } else if ($(window).scrollTop() < 500){
+        $('#toTop').remove();
+    }
     if ($(window).scrollTop() > 0) {
         $('header').attr('id', 'scrolled')
     };
@@ -24,8 +30,8 @@ $(document).scroll('header', function() {
 
 setInterval(function() {
     if (window.matchMedia('(max-width: 835px)').matches) {
-        $('header h2').empty();
+        $('header h2 a').empty();
     } else if (window.matchMedia('(min-width: 835px)').matches) {
-        $('header h2').html("<a href='#portfolio'>Porfolio</a>")
+        $('header h2 a').text("Porfolio")
     };
 }, 1);
