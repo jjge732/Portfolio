@@ -19,6 +19,6 @@ setInterval(function() {
     if (window.matchMedia('(max-width: 835px)').matches) {
         $('header h2').remove();
     } else {
-        $('header').html("<h1>John Eastwood</h1><div><h2><a href='#'>Porfolio</a></h2></div>")
+        $('header').html("<h1>John Eastwood</h1><h2><a href='#portfolio'>Porfolio</a></h2>")
     }
 }, 1);

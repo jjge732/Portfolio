@@ -2,6 +2,8 @@ html {
     width: 100vw;
     overflow-x: hidden;
     background-color: #ddd;
+    font-family: 'Montserrat', sans-serif;
+
 }
 
 #landingImageContainer {
@@ -29,8 +31,7 @@ main img {
 }
 
 header {
-    display: flex;
-    font-family: 'Montserrat', sans-serif;
+    display: grid;
     color: white;
     position: fixed;
     top: 5%;
@@ -39,6 +40,13 @@ header {
     justify-content: center;
     left: 5%;
     z-index: 2;
+    height: 45px;
+    align-items: center;
+}
+
+p {
+    margin: 25px 36px 0 36px;
+    font-size: 24px;
 }
 
 h3 {
@@ -50,7 +58,6 @@ h3 {
 
 #scrolled {
     background-color:#A4BDD4;
-    height: 28px;
     border-radius: 25px;
     color: #333;
     font-size: 24px;
@@ -61,18 +68,13 @@ h3 {
     color: #014888;
 }
 
-header h1, header h2{
-    top: inherit;
-}
-
 header h1 {
     position: absolute;
     left: inherit;
 }
 
-header div {
+header h2 {
     position: absolute;
-    top: inherit;
     right: 5%;
     margin: 0;
 }
