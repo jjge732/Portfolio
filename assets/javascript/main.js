@@ -18,8 +18,8 @@ $(document).scroll('header', function() {
         $('header').attr('style', 'background-color: rgb(164, 189, 212);');
         $('h1, h2').attr('style', 'color: rgb(51, 51, 51);');
     }
-    if  ($(window).scrollTop() > 500 && $('#toTop').text() === '') {
-        $('header').append($('<span id="toTop"><a href="#landingImageContainer">Back to top</a></span>'))
+    if ($(window).scrollTop() > 500 && $('#toTop').text() === '') {
+        $('body').append($('<div id="toTop"><a href="#landingImageContainer">Back to top</a></div>'))
     } else if ($(window).scrollTop() < 500){
         $('#toTop').remove();
     }
