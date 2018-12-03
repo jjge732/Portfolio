@@ -11,9 +11,11 @@ html {
     width: 100vw;
 }
 
-#landingImage, #alternateLandingImage {
+/* makes work on firefox */
+/* https://stackoverflow.com/questions/17907833/content-url-does-not-display-image-on-firefox-browser */
+#landingImage::after, #alternateLandingImage::after, #landingImage::before, #alternateLandingImage::before {
     position: absolute;
-    content:url('../images/architectural-design-architecture-buildings-692103.jpg');   /*https://stackoverflow.com/questions/2182716/is-it-possible-to-set-the-equivalent-of-a-src-attribute-of-an-img-tag-in-css*/
+    content:url('../images/pexels-photo-692103.jpeg');   /*https://stackoverflow.com/questions/2182716/is-it-possible-to-set-the-equivalent-of-a-src-attribute-of-an-img-tag-in-css*/
     object-fit: cover;  /*https://medium.com/@chrisnager/center-and-crop-images-with-a-single-line-of-css-ad140d5b4a87*/
     height: 100vh;
     width: 100vw;
@@ -26,8 +28,8 @@ main img {
     height: 300px;
 }
 
-#alternateLandingImage {
-    content:url('../images/architectural-design-architecture-buildings-692103-ConvertImage.jpg');   /*https://stackoverflow.com/questions/2182716/is-it-possible-to-set-the-equivalent-of-a-src-attribute-of-an-img-tag-in-css*/
+#alternateLandingImage::after {
+    content:url('../images/pexels-photo-692103-ConvertImage.jpg');   /*https://stackoverflow.com/questions/2182716/is-it-possible-to-set-the-equivalent-of-a-src-attribute-of-an-img-tag-in-css*/
 }
 
 #headerContainer {
