@@ -37,19 +37,19 @@ setInterval(function() {
 }, 1);
 
 $('#clickableImg1').hover(function() {
-    $(this).attr('src', 'assets/images/screenshots/chi-X-screenshot.jpg')
+    $(this).attr('src', 'assets/images/screenshots/chi-X-screenshot.JPG')
 }, function() {
     $(this).attr('src', 'assets/images/screenshots/chi-X-screenshot-ConvertImage.jpg')
 });
 
 $('#clickableImg2').hover(function() {
-    $(this).attr('src', 'assets/images/screenshots/trivia-screenshot.jpg')
+    $(this).attr('src', 'assets/images/screenshots/trivia-screenshot.JPG')
 }, function() {
     $(this).attr('src', 'assets/images/screenshots/trivia-screenshot-ConvertImage.jpg')
 });
 
 $('#clickableImg3').hover(function() {
-    $(this).attr('src', 'assets/images/screenshots/rps-screenshot.jpg')
+    $(this).attr('src', 'assets/images/screenshots/rps-screenshot.JPG')
 }, function() {
     $(this).attr('src', 'assets/images/screenshots/rps-screenshot-ConvertImage.jpg')
 });
