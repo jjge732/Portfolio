@@ -12,4 +12,4 @@
 
 ### Image used
 
-- [Aleksandar Pasaric (Background Image)](http://www.apasaric.com/?ref=pexels)
+- [Background Image (Aleksandar Pasaric)](https://www.pexels.com/@apasaric)
