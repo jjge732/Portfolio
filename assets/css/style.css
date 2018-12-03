@@ -13,7 +13,7 @@ html {
 
 /* makes work on firefox */
 /* https://stackoverflow.com/questions/17907833/content-url-does-not-display-image-on-firefox-browser */
-#landingImage::after, #alternateLandingImage::after, #landingImage::before, #alternateLandingImage::before {
+#landingImage, #alternateLandingImage, #landingImage::after, #alternateLandingImage::after, #landingImage::before, #alternateLandingImage::before {
     position: absolute;
     content:url('../images/pexels-photo-692103.jpeg');   /*https://stackoverflow.com/questions/2182716/is-it-possible-to-set-the-equivalent-of-a-src-attribute-of-an-img-tag-in-css*/
     object-fit: cover;  /*https://medium.com/@chrisnager/center-and-crop-images-with-a-single-line-of-css-ad140d5b4a87*/
@@ -28,7 +28,7 @@ main img {
     height: 300px;
 }
 
-#alternateLandingImage::after {
+#alternateLandingImage::after, #alternateLandingImage::before, #alternateLandingImage {
     content:url('../images/pexels-photo-692103-ConvertImage.jpg');   /*https://stackoverflow.com/questions/2182716/is-it-possible-to-set-the-equivalent-of-a-src-attribute-of-an-img-tag-in-css*/
 }
 
