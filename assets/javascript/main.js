@@ -47,3 +47,9 @@ $('#clickableImg2').hover(function() {
 }, function() {
     $(this).attr('src', 'assets/images/screenshots/trivia-screenshot-ConvertImage.jpg')
 });
+
+$('#clickableImg3').hover(function() {
+    $(this).attr('src', 'assets/images/screenshots/rps-screenshot.jpg')
+}, function() {
+    $(this).attr('src', 'assets/images/screenshots/rps-screenshot-ConvertImage.jpg')
+});
