@@ -50,7 +50,7 @@ header {
 
 #paragraphContainer {
     display: grid;
-    grid-template-columns: repeat(auto-fit, 400px);
+    grid-template-columns: repeat(auto-fit, 800px);
     justify-content: center;
     grid-column-gap: 36px;
 }
@@ -152,11 +152,50 @@ h4, #modal a {
     border-radius: 50%;
     padding: 8% 4%;
     background-color: hsl(22, 34, 55);
-
 }
 
 #modal a:hover {
     background-color: hsl(22, 34, 55);
+}
+
+#flickeringScrollPrompt {
+    position: absolute;
+    display: grid;
+    color: #ADD8E6;
+    justify-content: center;
+    width: 95vw;
+    height: 190vh;
+    align-content: center;
+    
+/* https://priteshgupta.com/2011/09/flip-or-reverse-text-using-css/ */
+    -webkit-transform:rotate(90deg);
+    -moz-transform:rotate(90deg);
+    -o-transform:rotate(90deg);
+    transform:rotate(90deg);
+    ms-filter:"progid:DXImageTransform.Microsoft.BasicImage(rotation=2)";
+    filter:progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
+}
+
+#flickeringScrollPrompt span{
+    font-size: 48px;
+    animation: move 3s infinite;
+}
+
+.back-end {
+    background-color: #000;
+    color: #fff;
+    width: 400px;
+    padding: 140px 0 160px 0;
+    font-size: 36px;
+    height: 40px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+@media screen and (max-width: 1600) {
+    #paragraphContainer {
+        grid-template-columns: repeat(auto-fit, 600px);
+    }
 }
 
 @media screen and (max-width: 835px) {
@@ -175,4 +214,9 @@ h4, #modal a {
 @-webkit-keyframes entrance {
     from {bottom: 0%};
     to {bottom: 10%};
+}
+
+@keyframes move {
+    from {color: rgba(0%, 0%, 0%, 0%)};
+    to {color: rgba(0%, 0%, 0%, 100%)};
 }

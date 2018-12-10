@@ -10,6 +10,11 @@
     <link rel='stylesheet' href='assets/css/style.css'>
     <!-- https://www.htmlgoodies.com/tutorials/web_graphics/article.php/3480001/So-You-Want-To-Pre-Load-Huh.htm -->
     <link rel='preload' as='image' href='assets/images/pexels-photo-692103-ConvertImage.jpg'>
+    <link rel='preload' as='image' href='assets/images/screenshots/chi-X-screenshot.JPG'>
+    <link rel='preload' as='image' href='assets/images/screenshots/chi-X-screenshot.JPG'>
+    <link rel='preload' as='image' href='assets/images/screenshots/trivia-screenshot.JPG'>
+    <link rel='preload' as='image' href='assets/images/screenshots/rps-screenshot.JPG'>
+
     <script src='assets/javascript/jQuery.js'></script>
 </head>
 <body>
@@ -28,6 +33,7 @@
                 </h2>
             </header>
         </div>
+        <div id='flickeringScrollPrompt'><span>>>></span></div>
     </div>
     <h3>
         Brand Statement
@@ -41,12 +47,12 @@
             I have experience with JavaScript, CSS, and HTML through study at Northwestern’s Coding Bootcamp as well as independent practice. Strengths include general coding logic, CSS styling, and adaptability to any new task. Currently learning Node.js and better ways to write code. Always enthusiastic to learn new ways of accomplishing objectives. My coding and interpersonal skills will undoubtedly help any team design and output amazing products in a timely manner.
         </p>
     </div>
-    <h3 id="portfolio">
-        Projects
+    <h3 id="portfolio" class='left'>
+        Front-End Projects
     </h3>
     <!-- <div id='modal'>
     </div> -->
-    <main>
+    <main class='left'>
         <a href="https://rsdesoto.github.io/ChiX/index.html">
             <img id='clickableImg1' src='assets/images/screenshots/chi-X-screenshot-ConvertImage.jpg' width='400px' height='auto' alt="Chi X">
         </a>
@@ -62,7 +68,11 @@
         <a href="https://jjge732.github.io/RPG-Game/">
             <img id='clickableImg5' src='assets/images/lorem_pixel_320x240/img-5.jpg' width='400px' height='auto' alt="RPG Game">
         </a>
+        <a class='back-end' href="https://github.com/jjge732/liri-node-app">
+            LIRI
+        </a>
     </main>
+    
     <footer>
             <a class="gitHub" href="https://github.com/jjge732"><img class="logo" alt="github logo" width="36px" height="auto" src="assets/images/GitHub-Mark-64px.png"></a>                
     </footer>

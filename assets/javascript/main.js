@@ -1,14 +1,14 @@
-$('#landingImageContainer').hover(function() {
+$('#landingImageContainer').hover(() => {
     $('#landingImageContainer img').remove();
     $('#landingImageContainer').append($('<img alt="color" id="landingImage">'));
-}, function() {
+}, () => {
     $('#landingImageContainer img').remove();
     $('#landingImageContainer').append($('<img alt="black & white" id="alternateLandingImage">'));
 });
 
 
 
-$(document).scroll('header', function() {
+$(document).scroll('header', () => {
     $('header').attr('style', `background-color: rgba(164, 189, 212, ${$(window).scrollTop() / 3}%);`);
     $('h1, h2').attr('style', `color: rgb(${360 - $(window).scrollTop() * 3}, ${360 - $(window).scrollTop() * 3}, ${360 - $(window).scrollTop() * 3});`)
     if ($(window).scrollTop() === 0) {
@@ -28,7 +28,7 @@ $(document).scroll('header', function() {
     };
 });
 
-setInterval(function() {
+setInterval(() => {
     if (window.matchMedia('(max-width: 835px)').matches) {
         $('header h2 a').empty();
     } else if (window.matchMedia('(min-width: 835px)').matches) {
@@ -36,20 +36,20 @@ setInterval(function() {
     };
 }, 1);
 
-$('#clickableImg1').hover(function() {
+$('#clickableImg1').hover(() => {
     $(this).attr('src', 'assets/images/screenshots/chi-X-screenshot.JPG')
-}, function() {
+}, () => {
     $(this).attr('src', 'assets/images/screenshots/chi-X-screenshot-ConvertImage.jpg')
 });
 
-$('#clickableImg2').hover(function() {
+$('#clickableImg2').hover(() => {
     $(this).attr('src', 'assets/images/screenshots/trivia-screenshot.JPG')
-}, function() {
+}, () => {
     $(this).attr('src', 'assets/images/screenshots/trivia-screenshot-ConvertImage.jpg')
 });
 
-$('#clickableImg3').hover(function() {
+$('#clickableImg3').hover(() => {
     $(this).attr('src', 'assets/images/screenshots/rps-screenshot.JPG')
-}, function() {
+}, () => {
     $(this).attr('src', 'assets/images/screenshots/rps-screenshot-ConvertImage.jpg')
 });
