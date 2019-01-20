@@ -6,9 +6,15 @@ const screenshotLinkSchema = new Schema({
         type: String,
         required: true
     },
-    link: {
+    imageLink: {
         type: String,
-        required: true
+        required: true,
+        unique: true
+    },
+    urlLink: {
+        type: String,
+        required: true,
+        unique: true
     }
 });
 

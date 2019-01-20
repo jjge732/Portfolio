@@ -10,14 +10,21 @@ const portfolioSchema = new Schema({
         type: String,
         required: true
     },
+    user: {
+        type: String,
+        required: true,
+        unique: true
+    },
+    gitHub: String,
+    linkedIn: String,
     // backgroundImage: {
     //     type: String,
     //     default: ''
     // },
-    brandStatement: {
+    brandStatement: [{
         type: String,
         required: true
-    },
+    }],
     dateObtained: {
         type: Date,
         default: Date.now()

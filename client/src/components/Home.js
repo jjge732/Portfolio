@@ -6,25 +6,22 @@ import Footer from './Footer';
 import axios from 'axios';
 
 class Home extends Component {
-    state = {
-        loading: true
-    };
+    state = {};
+    componentDidMount() {
+        axios.get('/api/portfolios/jjge732@gmail.com')
+        .then(res => this.setState(res.data[0]))
+        .catch(err => console.log(err));
+    }
     render() {
-        axios.get('/api/portfolios/')
-            .then(res => {
-                this.setState(res.data[1])
-            })
-            .catch(err => console.log(err));
         return this.state.firstName ? (
             <div>
                 <LandingImageContainer name={this.state.firstName + ' ' + this.state.lastName}/>
-                <BrandStatement statement={this.state.brandStatement}/>
-                <Portfolio />
+                <BrandStatement statement={this.state.brandStatement} />
+                <Portfolio screenshotLinks={this.state.screenshotLinks} />
                 <Footer />
             </div>
         ) : (
-            <div>
-            </div>
+            <div/>
         );
     }
 }

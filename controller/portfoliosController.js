@@ -6,17 +6,19 @@ module.exports = {
             .find(req.query)
             .sort({_id: 1})
             .populate('screenshotLinks')
-            .then(dbModel => res.json(dbModel))
+            .then(dbModel => {
+                res.json(dbModel);
+            })
             .catch(err => res.status(422).json(err));
     },
-    findById: (req, res) => {
+    findByUsername: (req, res) => {
         db.Portfolio
-            .findById(req.id)
+            .find({user: req.params.user})
             .populate('screenshotLinks')
             .then(dbModel => res.json(dbModel))
             .catch(err => res.status(422).json(err));
     },
-    create: (req, res) => {
+    createPortfolio: (req, res) => {
         db.Portfolio
             .create(req.body)
             .then(dbModel => res.json(dbModel))
@@ -24,7 +26,7 @@ module.exports = {
     },
     update: (req, res) => {
         db.Portfolio
-            .findOneAndUpdate(req.body)
+            .findOneAndUpdate(req.params.user, {$push: req.body})
             .then(dbModel => res.json(dbModel))
             .catch(err => res.status(422).json(err))
     },

@@ -3,10 +3,10 @@ const portfoliosController = require('../../controller/portfoliosController');
 
 router.route('/')
     .get(portfoliosController.findAll)
-    .post(portfoliosController.create);
+    .post(portfoliosController.createPortfolio);
 
-router.route('/:id')
-    .get(portfoliosController.findById)
+router.route('/:user')
+    .get(portfoliosController.findByUsername)
     .put(portfoliosController.update)
     .delete(portfoliosController.remove);
 
