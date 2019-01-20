@@ -1,75 +1,180 @@
 import React, {Component} from 'react';
-import axios from 'axios';
+import API from './utils/API';
 
 class Form extends Component {
     state = {
-        breed: "",
+        firstName: '',
+        lastName: '',
+        user: '',
+        github: '',
+        linkedIn: '',
+        brandStatement: '',
+        urlLink: '',
+        imageLink: '',
+        newUser: true
       };
+
+    updateUser = () => this.setState({newUser: this.state.newUser ? false: true});
     
-      handleInputChange = event => {
+    handleInputChange = event => {
         let value = event.target.value;
         const name = event.target.name;
-    
         this.setState({
-          [name]: value
+            [name]: value
         });
-      };
+    };
     
-      handleFormSubmit = event => {
+    handleFormSubmit = event => {
         event.preventDefault();
-        if (!this.state.breed) {
-          alert("Fill out your first and last name please!");
+        if (
+            !this.state.newUser &&
+            this.state.user &&
+            this.state.urlLink &&
+            this.state.imageLink
+        ) {
+            API.postScreenshotLinkData(this.state.user, this.state.imageLink, this.state.urlLink)
+                .then(screenshot => {
+                    console.log(screenshot);
+                    API.updatePortfolioData(this.state.user)
+                }).catch(err => console.log(err));
+        } else if (
+            !this.state.firstName ||
+            !this.state.lastName ||
+            !this.state.user ||
+            !this.state.github ||
+            !this.state.linkedIn ||
+            !this.state.brandStatement ||
+            !this.state.urlLink ||
+            !this.state.imageLink
+        ) {
+            alert('Please complete the entire form');
         } else {
-            alert(`Hello ${this.state.breed}`);
-            axios.post('/api/screenshotLinks', {
-                user: this.state.user,
-                imageLink: this.state.imageLink,
-                urlLink: this.state.urlLink
-            }).then(screenshot => {
-                axios.post('/api/portfolios/', {
-                    firstName: this.state.firstName,
-                    lastName: this.state.lastName,
-                    user: this.state.user,
-                    gitHub: this.state.gitHub,
-                    linkedIn: this.state.linkedIn,
-                    brandStatement: this.state.brandStatement,
+            API.postScreenshotLinkData(
+                this.state.user, this.state.imageLink, this.state.urlLink
+            ).then(screenshot => {
+                console.log(screenshot);
+                API.postPortfolioData(
+                    this.state.firstName,
+                    this.state.lastName,
+                    this.state.user,
+                    this.state.gitHub,
+                    this.state.linkedIn,
+                    this.state.brandStatement,
                     // need to check if the create method above will return _id
-                    screenshotLinks: screenshot
-                }).then(portfolio => console.log(portfolio)).catch(err => console.log(err));
+                    screenshot
+                ).then(portfolio => console.log(portfolio)).catch(err => console.log(err));
             }).catch(err => console.log(err));
-            }
+        }
     
-        labrador.getBreedImages(this.state.breed).then(breed => this.setState({breedImage: breed.data.message[Math.floor(Math.random() * 99)]}));
         this.setState({
-          breed: "",
+            firstName: '',
+            lastName: '',
+            user: '',
+            github: '',
+            linkedIn: '',
+            brandStatement: '',
+            urlLink: '',
+            imageLink: ''
         });
       };
     
-      render() {
-        return (
-          <div>
-            <p>
-                {this.state.breed}
-            </p>
-            <img src={this.state.breedImage}/>
-            <form className="form">
-              <input
-                value={this.state.breed}
-                name="breed"
-                onChange={this.handleInputChange}
-                type="text"
-                placeholder="First Name"
-              />
-              <button onClick={this.handleFormSubmit}>Submit</button>
-            </form>
-          </div>
+    render() {
+        return this.state.newUser ? (
+            <div>
+                <p>
+                    {this.state.firstName + ' ' + this.state.lastName}
+                </p>
+                <form className="form">
+                    <input
+                        value={this.state.firstName}
+                        name="firstName"
+                        onChange={this.handleInputChange}
+                        type="text"
+                        placeholder="First Name"
+                    />
+                    <input
+                        value={this.state.lastName}
+                        name="lastName"
+                        onChange={this.handleInputChange}
+                        type="text"
+                        placeholder="Last Name"
+                    />
+                    <input
+                        value={this.state.user}
+                        name="user"
+                        onChange={this.handleInputChange}
+                        type="text"
+                        placeholder="Username"
+                    />
+                    <input
+                        value={this.state.github}
+                        name="github"
+                        onChange={this.handleInputChange}
+                        type="text"
+                        placeholder="GitHub account"
+                    />
+                    <input
+                        value={this.state.linkedIn}
+                        name="linkedIn"
+                        onChange={this.handleInputChange}
+                        type="text"
+                        placeholder="URL to linkedIn Profile"
+                    />
+                    <input
+                        value={this.state.brandStatement}
+                        name="brandStatement"
+                        onChange={this.handleInputChange}
+                        type="text"
+                        placeholder="Brand Statement"
+                    />
+                    <input
+                        value={this.state.urlLink}
+                        name="urlLink"
+                        onChange={this.handleInputChange}
+                        type="text"
+                        placeholder="Link to a Web App"
+                    />
+                    <input
+                        value={this.state.imageLink}
+                        name="imageLink"
+                        onChange={this.handleInputChange}
+                        type="text"
+                        placeholder="Link to an Image of Web App"
+                    />
+                <button onClick={this.handleFormSubmit}>Submit</button>
+                </form>
+                <button onClick={this.updateUser}>Already have an account?</button>
+            </div>
+        ) : (
+            <div>
+                <form className="form">
+                    <input
+                        value={this.state.user}
+                        name="user"
+                        onChange={this.handleInputChange}
+                        type="text"
+                        placeholder="Username"
+                    />
+                    <input
+                        value={this.state.urlLink}
+                        name="urlLink"
+                        onChange={this.handleInputChange}
+                        type="text"
+                        placeholder="Link to a Web App"
+                    />
+                    <input
+                        value={this.state.imageLink}
+                        name="imageLink"
+                        onChange={this.handleInputChange}
+                        type="text"
+                        placeholder="Link to an Image of Web App"
+                    />
+                    <button onClick={this.handleFormSubmit}>Submit</button>
+                </form>
+                <button onClick={this.updateUser}>Don't have an account?</button>
+            </div>
         );
       }
 }
 
 export default Form;
-
-class Form extends Component {
-  // Setting the component's initial state
-  
-}

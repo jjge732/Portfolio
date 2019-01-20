@@ -6,9 +6,7 @@ module.exports = {
             .find(req.query)
             .sort({_id: 1})
             .populate('screenshotLinks')
-            .then(dbModel => {
-                res.json(dbModel);
-            })
+            .then(dbModel => {res.json(dbModel)})
             .catch(err => res.status(422).json(err));
     },
     findByUsername: (req, res) => {
@@ -24,7 +22,7 @@ module.exports = {
             .then(dbModel => res.json(dbModel))
             .catch(err => res.status(422).json(err));
     },
-    update: (req, res) => {
+    updatePortfolio: (req, res) => {
         db.Portfolio
             .findOneAndUpdate(req.params.user, {$push: req.body})
             .then(dbModel => res.json(dbModel))

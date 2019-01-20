@@ -7,7 +7,7 @@ router.route('/')
 
 router.route('/:user')
     .get(portfoliosController.findByUsername)
-    .put(portfoliosController.update)
+    .put(portfoliosController.updatePortfolio)
     .delete(portfoliosController.remove);
 
 module.exports = router;

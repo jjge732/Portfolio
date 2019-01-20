@@ -3,14 +3,14 @@ import LandingImageContainer from './LandingImageContainer';
 import BrandStatement from './BrandStatement';
 import Portfolio from './Portfolio';
 import Footer from './Footer';
-import axios from 'axios';
+import API from './utils/API';
 
 class Home extends Component {
     state = {};
     componentDidMount() {
-        axios.get('/api/portfolios/jjge732@gmail.com')
-        .then(res => this.setState(res.data[0]))
-        .catch(err => console.log(err));
+        API.getPortfolioData()
+            .then(res => this.setState(res.data[0] || res.data))
+            .catch(err => console.log(err));
     }
     render() {
         return this.state.firstName ? (
