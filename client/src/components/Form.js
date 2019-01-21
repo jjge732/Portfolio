@@ -32,10 +32,12 @@ class Form extends Component {
             this.state.urlLink &&
             this.state.imageLink
         ) {
-            API.postScreenshotLinkData(this.state.user, this.state.imageLink, this.state.urlLink)
+            API.postScreenshotLinkData(this.state.user.trim(), this.state.imageLink.trim(), this.state.urlLink.trim())
                 .then(screenshot => {
                     console.log(screenshot);
-                    API.updatePortfolioData(this.state.user)
+                    API.updatePortfolioData(this.state.user, screenshot.data._id)
+                        .then(data => console.log(data))
+                        .catch(err => console.log(err));
                 }).catch(err => console.log(err));
         } else if (
             !this.state.firstName ||
@@ -59,7 +61,7 @@ class Form extends Component {
                     this.state.brandStatement.replace(/[^a-z.!]/ig, ' '),
                     // need to check if the create method above will return _id
                     screenshot.data._id
-                ).then(portfolio => {
+                ).then(() => {
                     this.setState({
                         firstName: '',
                         lastName: '',

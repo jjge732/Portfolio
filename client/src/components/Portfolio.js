@@ -8,9 +8,12 @@ class Portfolio extends Component {
     }
     render() {
         return (
-            <main className='left'>
-                {this.screenshotLinks.map((image, index)=> <ImageLink key={index} link={image.urlLink} source={image.imageLink} width='400px' height='200px'/>)}
-            </main>
+            <div>
+                <h3 id='portfolio'>Portfolio</h3>
+                <main className='left'>
+                    {this.screenshotLinks.map((image, index)=> <ImageLink key={index} link={image.urlLink} source={image.imageLink} width='400px' height='200px'/>)}
+                </main>
+            </div>
         )
     }
 }

@@ -24,9 +24,9 @@ module.exports = {
     },
     updatePortfolio: (req, res) => {
         db.Portfolio
-            .findOneAndUpdate(req.params.user, {$push: req.body})
+            .updateOne({user: req.params.user}, {$push: req.body})
             .then(dbModel => res.json(dbModel))
-            .catch(err => res.status(422).json(err))
+            .catch(err => res.status(422).json(err));
     },
     remove: (req, res) => {
         db.Portfolio
