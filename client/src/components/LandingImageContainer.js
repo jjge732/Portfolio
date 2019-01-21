@@ -4,7 +4,10 @@ class LandingImageContainer extends Component {
     state = {
         imageSource: '/images/pexels-photo-692103.jpeg',
         toTopShouldExist: false,
-        scrolled: false
+        scrolled: false,
+        scrollColor: {
+            color: 'rgb(360, 360, 360)'
+        }
     }
     constructor(props) {
         super();
@@ -15,7 +18,7 @@ class LandingImageContainer extends Component {
         this.setState({
             scrollColor: {
                 backgroundColor: `rgba(164, 189, 212, ${location / 3 || 0}%)`,
-                color: `rgb(${360 - location * 3}, ${360 - location * 3}, ${360 - location * 3})`
+                color: `rgb(${360 - location * 3 || 360}, ${360 - location * 3 || 360}, ${360 - location * 3 || 360})`
             }
         });
         if (location > 0) {
@@ -25,7 +28,7 @@ class LandingImageContainer extends Component {
         }
         if (location > 500) {
             this.setState({toTopShouldExist: true});
-        } else if (location < 500){
+        } else {
             this.setState({toTopShouldExist: false});
         }
     }
