@@ -12,10 +12,10 @@ class BrandStatement extends Component {
                     Brand Statement
                 </h3>
                 <div id='paragraphContainer'>
-                        {this.statement.map(paragraph => <p>{paragraph}</p>)}
+                        <p>{this.statement}</p>
                 </div>
             </div>
-        );
+        )
     }
 }
 

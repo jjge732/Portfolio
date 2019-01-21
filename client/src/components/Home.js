@@ -9,7 +9,7 @@ class Home extends Component {
     state = {};
     componentDidMount() {
         API.getPortfolioData()
-            .then(res => this.setState(res.data[0] || res.data))
+            .then(res => this.setState(res.data[0]))
             .catch(err => console.log(err));
     }
     render() {
@@ -18,7 +18,7 @@ class Home extends Component {
                 <LandingImageContainer name={this.state.firstName + ' ' + this.state.lastName}/>
                 <BrandStatement statement={this.state.brandStatement} />
                 <Portfolio screenshotLinks={this.state.screenshotLinks} />
-                <Footer />
+                <Footer gitHub={this.state.gitHub} linkedIn={this.state.linkedIn}/>
             </div>
         ) : (
             <div/>

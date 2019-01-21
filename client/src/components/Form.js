@@ -6,7 +6,7 @@ class Form extends Component {
         firstName: '',
         lastName: '',
         user: '',
-        github: '',
+        gitHub: '',
         linkedIn: '',
         brandStatement: '',
         urlLink: '',
@@ -41,8 +41,6 @@ class Form extends Component {
             !this.state.firstName ||
             !this.state.lastName ||
             !this.state.user ||
-            !this.state.github ||
-            !this.state.linkedIn ||
             !this.state.brandStatement ||
             !this.state.urlLink ||
             !this.state.imageLink
@@ -52,30 +50,29 @@ class Form extends Component {
             API.postScreenshotLinkData(
                 this.state.user, this.state.imageLink, this.state.urlLink
             ).then(screenshot => {
-                console.log(screenshot);
                 API.postPortfolioData(
-                    this.state.firstName,
-                    this.state.lastName,
-                    this.state.user,
-                    this.state.gitHub,
-                    this.state.linkedIn,
-                    this.state.brandStatement,
+                    this.state.firstName.replace(/[^a-z]/ig, ''),
+                    this.state.lastName.replace(/[^a-z]/ig, ''),
+                    this.state.user.trim(),
+                    this.state.gitHub.trim(),
+                    this.state.linkedIn.trim(),
+                    this.state.brandStatement.replace(/[^a-z.!]/ig, ' '),
                     // need to check if the create method above will return _id
-                    screenshot
-                ).then(portfolio => console.log(portfolio)).catch(err => console.log(err));
+                    screenshot.data._id
+                ).then(portfolio => {
+                    this.setState({
+                        firstName: '',
+                        lastName: '',
+                        user: '',
+                        gitHub: '',
+                        linkedIn: '',
+                        brandStatement: '',
+                        urlLink: '',
+                        imageLink: ''
+                    });
+                }).catch(err => console.log(err));
             }).catch(err => console.log(err));
         }
-    
-        this.setState({
-            firstName: '',
-            lastName: '',
-            user: '',
-            github: '',
-            linkedIn: '',
-            brandStatement: '',
-            urlLink: '',
-            imageLink: ''
-        });
       };
     
     render() {
@@ -107,8 +104,8 @@ class Form extends Component {
                         placeholder="Username"
                     />
                     <input
-                        value={this.state.github}
-                        name="github"
+                        value={this.state.gitHub}
+                        name="gitHub"
                         onChange={this.handleInputChange}
                         type="text"
                         placeholder="GitHub account"
@@ -120,7 +117,7 @@ class Form extends Component {
                         type="text"
                         placeholder="URL to linkedIn Profile"
                     />
-                    <input
+                    <textarea
                         value={this.state.brandStatement}
                         name="brandStatement"
                         onChange={this.handleInputChange}

@@ -21,10 +21,10 @@ const portfolioSchema = new Schema({
     //     type: String,
     //     default: ''
     // },
-    brandStatement: [{
+    brandStatement: {
         type: String,
         required: true
-    }],
+    },
     dateObtained: {
         type: Date,
         default: Date.now()

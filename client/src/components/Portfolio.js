@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import ImageLink from './ImageLink'
 
 class Portfolio extends Component {
-    state = {}
     constructor(props) {
         super();
         this.screenshotLinks = props.screenshotLinks 
@@ -10,7 +9,7 @@ class Portfolio extends Component {
     render() {
         return (
             <main className='left'>
-                {this.screenshotLinks.map(image => <ImageLink link={image.urlLink} source={image.imageLink} width='400px' height='200px'/>)}
+                {this.screenshotLinks.map((image, index)=> <ImageLink key={index} link={image.urlLink} source={image.imageLink} width='400px' height='200px'/>)}
             </main>
         )
     }
