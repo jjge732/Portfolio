@@ -2,14 +2,12 @@
 
 ### Library used
 
-- jQuery
+- React
 
 ### Projects attached
 
-- [Chi X](https://rsdesoto.github.io/ChiX/index.html) - a web app for discovering new places in Chicago made in collaboration with other students at Northwestern's Coding Bootcamp
-- [Trivia Game](https://jjge732.github.io/Trivia-Game/) - a game that utilizes a trivia API to generate questions and answers one at a time
-- [Rock, Paper, Scissors](https://jjge732.github.io/Rock-Paper-Scissors/) - an app that employs firebase to allow two players to play a game of Rock, Paper, Scissors
-
+- [Scraper](https://pride-news-scraper.herokuapp.com/) - a web app that scrapes a news website and renders links to stories on that site.
+- [Sequelize Burger](https://sequelized-burger-jjge.herokuapp.com/) - a web app that utilizes MySQL to store information about items on the page and can interact with those items to adjust the database.
 ### Image used
 
 - [Background Image (Aleksandar Pasaric)](https://www.pexels.com/@apasaric)
