@@ -32,15 +32,9 @@ class LandingImageContainer extends Component {
             this.setState({toTopShouldExist: false});
         }
     }
-    getColoredImage = () => {
-        this.setState({imageSource: '/images/pexels-photo-692103.jpeg'})
-    }
-    getBlackAndWhiteImage = () => {
-        this.setState({imageSource: '/images/pexels-photo-692103-ConvertImage.jpg'})
-    }
-    componentDidMount = () => {
-        window.addEventListener('scroll', this.handleScroll);
-    }
+    getColoredImage = () => this.setState({imageSource: '/images/pexels-photo-692103.jpeg'});
+    getBlackAndWhiteImage = () => this.setState({imageSource: '/images/pexels-photo-692103-ConvertImage.jpg'});
+    componentDidMount = () => window.addEventListener('scroll', this.handleScroll);
     render() {
         return (
             <div id='landingImageContainer' onMouseEnter={this.getColoredImage} onMouseLeave={this.getBlackAndWhiteImage}>

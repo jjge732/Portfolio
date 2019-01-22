@@ -12,7 +12,7 @@ class Form extends Component {
         urlLink: '',
         imageLink: '',
         newUser: true
-      };
+    };
 
     updateUser = () => this.setState({newUser: this.state.newUser ? false: true});
     
@@ -75,98 +75,133 @@ class Form extends Component {
                 }).catch(err => console.log(err));
             }).catch(err => console.log(err));
         }
-      };
-    
+    };
     render() {
         return this.state.newUser ? (
-            <div>
-                <p>
-                    {this.state.firstName + ' ' + this.state.lastName}
-                </p>
-                <form className="form">
+            <div id='form'>
+                <h5>
+                    Thanks for signing up{this.state.firstName && this.state.lastName ? ' ' + this.state.firstName + ' ' + this.state.lastName + '!': '!'}
+                </h5>
+                <form>
+                    <h5>
+                        What is your first name?
+                    </h5>
                     <input
                         value={this.state.firstName}
                         name="firstName"
                         onChange={this.handleInputChange}
                         type="text"
-                        placeholder="First Name"
+                        placeholder="John"
                     />
+                    <h5>
+                        What is your last name?
+                    </h5>
                     <input
                         value={this.state.lastName}
                         name="lastName"
                         onChange={this.handleInputChange}
                         type="text"
-                        placeholder="Last Name"
+                        placeholder="Eastwood"
                     />
+                    <h5>
+                        What is your e-mail address?
+                    </h5>
                     <input
                         value={this.state.user}
                         name="user"
                         onChange={this.handleInputChange}
                         type="text"
-                        placeholder="Username"
+                        placeholder="jjge732@gmail.com"
                     />
+                    <h5>
+                        Please provide a link to your GitHub profile page
+                    </h5>
                     <input
                         value={this.state.gitHub}
                         name="gitHub"
                         onChange={this.handleInputChange}
                         type="text"
-                        placeholder="GitHub account"
+                        placeholder="https://github.com/jjge732"
                     />
+                    <h5>
+                        Please provide a link to your LinkedIn profile page
+                    </h5>
                     <input
                         value={this.state.linkedIn}
                         name="linkedIn"
                         onChange={this.handleInputChange}
                         type="text"
-                        placeholder="URL to linkedIn Profile"
+                        placeholder="https://www.linkedin.com/in/john-eastwood-40b207173/"
                     />
+                    <h5>
+                        What is your Brand Statement?
+                    </h5>
                     <textarea
+                        id="brandStatement"
                         value={this.state.brandStatement}
                         name="brandStatement"
                         onChange={this.handleInputChange}
                         type="text"
-                        placeholder="Brand Statement"
+                        placeholder="Enthusiastic Full Stack Web Developer with a background in biochemistry and a passion for interactive, user-friendly web design. Superb at collaborating ideas with colleagues so everyone’s opinion is heard while ensuring projects are completed on time. Inventive problem-solver and tireless worker at any task. 
+
+                        I have experience with Node.js, React, vanilla JavaScript, jQuery, CSS, and HTML through study at Northwestern’s Coding Bootcamp as well as independent practice. Strengths include general coding logic, API integration, and adaptability to any new task. Currently learning Python and better ways to write code. Always enthusiastic to learn new ways of accomplishing objectives. My coding and interpersonal skills will undoubtedly help any team design and output amazing products in a timely manner."
                     />
+                    <h5>
+                        Please provide a link to one of your projects
+                    </h5>
                     <input
                         value={this.state.urlLink}
                         name="urlLink"
                         onChange={this.handleInputChange}
                         type="text"
-                        placeholder="Link to a Web App"
+                        placeholder="https://ancient-wave-72500.herokuapp.com/"
                     />
+                    <h5>
+                        Please provide a link to an image to represent your project
+                    </h5>
                     <input
                         value={this.state.imageLink}
                         name="imageLink"
                         onChange={this.handleInputChange}
                         type="text"
-                        placeholder="Link to an Image of Web App"
+                        placeholder="https://images.pexels.com/photos/"
                     />
                 <button onClick={this.handleFormSubmit}>Submit</button>
                 </form>
                 <button onClick={this.updateUser}>Already have an account?</button>
             </div>
         ) : (
-            <div>
-                <form className="form">
+            <div id="form">
+                <form>
+                    <h5>
+                        What is your e-mail address?
+                    </h5>
                     <input
                         value={this.state.user}
                         name="user"
                         onChange={this.handleInputChange}
                         type="text"
-                        placeholder="Username"
+                        placeholder="jjge732@gmail.com"
                     />
+                    <h5>
+                        Please provide a link to one of your projects
+                    </h5>
                     <input
                         value={this.state.urlLink}
                         name="urlLink"
                         onChange={this.handleInputChange}
                         type="text"
-                        placeholder="Link to a Web App"
+                        placeholder="https://ancient-wave-72500.herokuapp.com/"
                     />
+                    <h5>
+                        Please provide a link to an image to represent your project
+                    </h5>
                     <input
                         value={this.state.imageLink}
                         name="imageLink"
                         onChange={this.handleInputChange}
                         type="text"
-                        placeholder="Link to an Image of Web App"
+                        placeholder="https://images.pexels.com/photos/"
                     />
                     <button onClick={this.handleFormSubmit}>Submit</button>
                 </form>

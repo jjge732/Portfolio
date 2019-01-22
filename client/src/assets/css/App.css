@@ -146,29 +146,29 @@ h4 {
 }
 
 #flickeringScrollPrompt {
-  position: absolute;
-  display: grid;
-  color: #ADD8E6;
-  justify-content: center;
-  width: 95vw;
-  height: 190vh;
-  align-content: center;
-  
-/* https://priteshgupta.com/2011/09/flip-or-reverse-text-using-css/ */
-  -webkit-transform:rotate(90deg);
-  -moz-transform:rotate(90deg);
-  -o-transform:rotate(90deg);
-  transform:rotate(90deg);
-  ms-filter:"progid:DXImageTransform.Microsoft.BasicImage(rotation=2)";
-  filter:progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
+    position: absolute;
+    display: grid;
+    color: #ADD8E6;
+    justify-content: center;
+    width: 95vw;
+    height: 190vh;
+    align-content: center;
+    
+    /* https://priteshgupta.com/2011/09/flip-or-reverse-text-using-css/ */
+    -webkit-transform:rotate(90deg);
+    -moz-transform:rotate(90deg);
+    -o-transform:rotate(90deg);
+    transform:rotate(90deg);
+    ms-filter:"progid:DXImageTransform.Microsoft.BasicImage(rotation=2)";
+    filter:progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
 }
 
 #flickeringScrollPrompt span{
-  font-size: 48px;
-  animation: move 3s infinite;
+    font-size: 48px;
+    animation: move 3s infinite;
 }
 
-.back-end {
+/* .back-end {
   background-color: #000;
   color: #fff;
   width: 400px;
@@ -177,18 +177,80 @@ h4 {
   height: 40px;
   box-sizing: border-box;
   text-align: center;
+} */
+
+#form form{
+    display: grid;
+    grid-template-rows: repeat(auto-fit, auto);
+    grid-template-columns: auto;
+    grid-row-gap: 15px;
+    margin: 25px auto;
+}
+
+form input, form textarea {
+    height: 40px;
+    background-color: rgba(164, 189, 212, 50%);
+    border-color: rgba(164, 189, 212, 50%);
+    border: 0;
+    border-radius: 20px;
+    box-shadow: 2px 2px 8px;
+    font-size: 18px;
+    color: #222;
+    text-align: center;
+}
+
+::placeholder {
+    font-size: 18px;
+    color: #222;
+    text-align: center;
+}
+
+#form button{
+    height: 30px;
+    background-color: rgb(164, 189, 212);
+    border-color: rgb(164, 189, 212);
+    box-shadow: 2px 2px 8px;
+    font-size: 18px;
+    color: #222;
+}
+
+form button {
+    width: 25%;
+    justify-self: right;
+}
+
+#form {
+    margin: 5% 15%;
+}
+
+h5 {
+    color: #333;
+}
+
+button {
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+#brandStatement, #brandStatement::placeholder {
+    height: 320px;
+    padding: 10px 15px;
+    text-align: start;
 }
 
 @media screen and (max-width: 1600) {
-  #paragraphContainer {
-      grid-template-columns: repeat(auto-fit, 600px);
-  }
+    #paragraphContainer {
+        grid-template-columns: repeat(auto-fit, 600px);
+    }
 }
 
 @media screen and (max-width: 835px) {
     header h1 {
         width: 100%;
         text-align: start;
+    }
+    #form {
+        margin: 5%;
     }
 }
 
@@ -198,11 +260,11 @@ h4 {
 }
 
 @-webkit-keyframes entrance {
-  from {bottom: 0%};
-  to {bottom: 10%};
+    from {bottom: 0%};
+    to {bottom: 10%};
 }
 
 @keyframes move {
-  from {color: rgba(0%, 0%, 0%, 0%)};
-  to {color: rgba(0%, 0%, 0%, 100%)};
+    from {color: rgba(0%, 0%, 0%, 0%)};
+    to {color: rgba(0%, 0%, 0%, 100%)};
 }
