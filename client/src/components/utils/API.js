@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export default {
-    getPortfolioData: (user) => axios.get('/api/portfolios/' + user),
+    getPortfolioData: (user = 'jjge732@gmail.com') => axios.get('/api/portfolios/' + user),
     updatePortfolioData: (user, referenceId) => axios.put('/api/portfolios/' + user, {screenshotLinks: referenceId}),
     postScreenshotLinkData: (user, imageLink, urlLink) => {
         return axios.post('/api/screenshotLinks/', {
