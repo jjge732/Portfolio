@@ -36,7 +36,10 @@ class Form extends Component {
                 .then(screenshot => {
                     console.log(screenshot);
                     API.updatePortfolioData(this.state.user, screenshot.data._id)
-                        .then(data => console.log(data))
+                        .then(data => {
+                            console.log(data)
+                            window.location.replace('/' + this.state.user);
+                        })
                         .catch(err => console.log(err));
                 }).catch(err => console.log(err));
         } else if (
@@ -62,6 +65,7 @@ class Form extends Component {
                     // need to check if the create method above will return _id
                     screenshot.data._id
                 ).then(() => {
+                    window.location.replace('/' + this.state.user);
                     this.setState({
                         firstName: '',
                         lastName: '',
