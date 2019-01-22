@@ -38,7 +38,7 @@ class Form extends Component {
                     API.updatePortfolioData(this.state.user, screenshot.data._id)
                         .then(data => {
                             console.log(data)
-                            window.location.replace('/' + this.state.user);
+                            window.location.assign('/' + this.state.user);
                         })
                         .catch(err => console.log(err));
                 }).catch(err => console.log(err));
@@ -62,10 +62,9 @@ class Form extends Component {
                     this.state.gitHub.trim(),
                     this.state.linkedIn.trim(),
                     this.state.brandStatement.replace(/[^a-z.!]/ig, ' '),
-                    // need to check if the create method above will return _id
                     screenshot.data._id
                 ).then(() => {
-                    window.location.replace('/' + this.state.user);
+                    window.location.assign('/' + this.state.user);
                     this.setState({
                         firstName: '',
                         lastName: '',
