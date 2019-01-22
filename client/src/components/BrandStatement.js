@@ -1,10 +1,6 @@
 import React, {Component} from 'react';
 
 class BrandStatement extends Component {
-    constructor(props) {
-        super();
-        this.statement = props.statement;
-    }
     render () {
         return (
             <div>
@@ -12,7 +8,7 @@ class BrandStatement extends Component {
                     Brand Statement
                 </h3>
                 <div id='paragraphContainer'>
-                        <p>{this.statement}</p>
+                        <p>{this.props.statement}</p>
                 </div>
             </div>
         )

@@ -9,10 +9,6 @@ class LandingImageContainer extends Component {
             color: 'rgb(360, 360, 360)'
         }
     }
-    constructor(props) {
-        super();
-        this.name = props.name;
-    }
     handleScroll = () => {
         let location = (window.pageYOffset || document.scrollTop)  - (document.clientTop || 0)
         this.setState({
@@ -45,7 +41,7 @@ class LandingImageContainer extends Component {
                 {this.state.scrolled ? 
                     <header style={this.state.scrollColor} id='scrolled'>
                         <h1>
-                            {this.name}
+                            {this.props.name}
                         </h1>
                         <h2>
                             <a href='#portfolio'>
@@ -55,7 +51,7 @@ class LandingImageContainer extends Component {
                     </header> : 
                     <header style={this.state.scrollColor}>
                         <h1 style={this.color}>
-                            {this.name}
+                            {this.props.name}
                         </h1>
                         <h2 style={this.color}>
                             <a href='#portfolio'>
@@ -65,11 +61,6 @@ class LandingImageContainer extends Component {
                     </header>
                 }
                 </div>
-                {/* <div id='flickeringScrollPrompt'>
-                    <span>
-                        >>>
-                    </span>
-                </div> */}
             </div>
         );
     }

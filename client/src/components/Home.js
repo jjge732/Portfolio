@@ -9,7 +9,6 @@ import API from './utils/API';
 class Home extends Component {
     state = {};
     componentDidMount() {
-        console.log(this.props.match.params.user);
         API.getPortfolioData(this.props.match.params.user)
             .then(res => this.setState(res.data[0]))
             .catch(err => console.log(err));
