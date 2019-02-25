@@ -59,7 +59,7 @@ class Form extends Component {
                     this.state.user.trim(),
                     this.state.gitHub.trim(),
                     this.state.linkedIn.trim(),
-                    this.state.brandStatement.replace(/[^a-z.,'"!]/ig, ' '),
+                    this.state.brandStatement.replace(/[^a-z.,'"!;+]/ig, ' '),
                     screenshot.data._id
                 ).then(() => {
                     window.location.assign('/' + this.state.user);
