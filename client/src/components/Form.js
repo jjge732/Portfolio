@@ -34,10 +34,8 @@ class Form extends Component {
         ) {
             API.postScreenshotLinkData(this.state.user.trim(), this.state.imageLink.trim(), this.state.urlLink.trim())
                 .then(screenshot => {
-                    console.log(screenshot);
                     API.updatePortfolioData(this.state.user, screenshot.data._id)
                         .then(data => {
-                            console.log(data)
                             window.location.assign('/' + this.state.user);
                         })
                         .catch(err => console.log(err));
@@ -56,12 +54,12 @@ class Form extends Component {
                 this.state.user, this.state.imageLink, this.state.urlLink
             ).then(screenshot => {
                 API.postPortfolioData(
-                    this.state.firstName.replace(/[^a-z]/ig, ''),
-                    this.state.lastName.replace(/[^a-z]/ig, ''),
+                    this.state.firstName.replace(/[^a-z']/ig, ''),
+                    this.state.lastName.replace(/[^a-z']/ig, ''),
                     this.state.user.trim(),
                     this.state.gitHub.trim(),
                     this.state.linkedIn.trim(),
-                    this.state.brandStatement.replace(/[^a-z.!]/ig, ' '),
+                    this.state.brandStatement.replace(/[^a-z.,'"!]/ig, ' '),
                     screenshot.data._id
                 ).then(() => {
                     window.location.assign('/' + this.state.user);

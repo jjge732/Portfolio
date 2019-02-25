@@ -27,10 +27,6 @@ main img {
   object-fit: cover;
   height: 300px;
 }
-/* 
-#alternateLandingImage::after, #alternateLandingImage::before, #alternateLandingImage {
-  content:url('../images/pexels-photo-692103-ConvertImage.jpg');   https://stackoverflow.com/questions/2182716/is-it-possible-to-set-the-equivalent-of-a-src-attribute-of-an-img-tag-in-css
-} */
 
 #headerContainer {
   display: grid;
@@ -167,17 +163,6 @@ h4 {
     font-size: 48px;
     animation: move 3s infinite;
 }
-
-/* .back-end {
-  background-color: #000;
-  color: #fff;
-  width: 400px;
-  padding: 140px 0 160px 0;
-  font-size: 36px;
-  height: 40px;
-  box-sizing: border-box;
-  text-align: center;
-} */
 
 #form form{
     display: grid;
