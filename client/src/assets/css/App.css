@@ -71,13 +71,16 @@ h3 {
   box-shadow: 4px 4px 8px, -4px 4px 8px;
 }
 
-header h1 {
+header h1, header h2 {
   position: absolute;
+  margin-top: 10px;
+}
+
+header h1 {
   left: 10%;
 }
 
 header h2 {
-  position: absolute;
   right: 10%;
 }
 
