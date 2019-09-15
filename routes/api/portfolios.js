@@ -8,6 +8,7 @@ router.route('/')
 router.route('/:user')
     .get(portfoliosController.findByUsername)
     .put(portfoliosController.updatePortfolio)
+    .patch(portfoliosController.updateBrandStatement)
     .delete(portfoliosController.remove);
 
 module.exports = router;

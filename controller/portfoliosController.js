@@ -28,6 +28,12 @@ module.exports = {
             .then(dbModel => res.json(dbModel))
             .catch(err => res.status(422).json(err));
     },
+    updateBrandStatement: (req, res) => {
+        db.Portfolio
+            .updateOne({user: req.params.user}, {brandStatement: req.body.brandStatement})
+            .then(dbModel => res.json(dbModel))
+            .catch(err => res.status(422).json(err));
+    },
     remove: (req, res) => {
         db.Portfolio
             .findById(req.body)
