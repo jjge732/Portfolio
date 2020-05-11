@@ -1,4 +1,4 @@
-# [Portfolio](https://my-dynamic-portfolio.herokuapp.com/)
+# [Portfolio](https://jjge732-portfolio.herokuapp.com)
 This app is a portfolio made using react. It is also a template that can be used by anyone.
 
 ### Library used
